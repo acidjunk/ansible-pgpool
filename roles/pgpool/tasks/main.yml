@@ -3,6 +3,7 @@
   yum: name={{ item }} state=installed
   with_items:
    - pgpool-II-93
+   - pgpool-II-93-extensions
 
 - name: Setup pgpool extensions
   sudo_user: postgres
@@ -25,7 +26,7 @@
    - pcp.conf
    - pgpool.conf
    - pool_hba.conf
-  notify: restart pgpool
+  #notify: restart pgpool
 
 - name: Create directory for pgPool scripts
   file: state=directory path=/usr/local/libexec/pgpool mode=0755 owner=root group=root
@@ -45,8 +46,8 @@
   template: src={{ item }}.j2 dest=/etc/pgpool-II-93/{{ item }} mode=0664 owner=postgres group=postgres
   with_items:
    - pool_passwd
-  notify: restart pgpool
+#   notify: restart pgpool
 
-- name: Start pgpool
-  service: name=pgpool-II-93 state=started enabled=yes
+# - name: Start pgpool
+#   service: name=pgpool-II-93 state=started enabled=yes
 

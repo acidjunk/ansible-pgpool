@@ -13,7 +13,6 @@
     state: absent
     validate: 'visudo -cf %s'
 
-
 - name: Dont require a tty
   lineinfile:
     dest: /etc/sudoers

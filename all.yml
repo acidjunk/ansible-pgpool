@@ -3,6 +3,8 @@
   hosts: all
   roles:
    # Machine setup roles
+   - yum_mirror_fix
+   - utils
    - vagrant_sudo_fix
    - epel
    - centos_libevent_fix
