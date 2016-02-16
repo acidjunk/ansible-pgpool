@@ -1,0 +1,10 @@
+---
+- name: install vim package
+  yum: name=vim state=present
+  
+- name: install midnight commander
+  yum: name=mc state=present
+
+
+
+

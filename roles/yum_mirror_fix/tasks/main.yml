@@ -1,0 +1,7 @@
+---
+# For some reason this pretends to fail >.<
+- name: Fix yum mirror to version 6
+  replace: 
+    dest: /etc/yum/vars/releasever 
+    regexp: '^6.5$'
+    replace: '6' 
